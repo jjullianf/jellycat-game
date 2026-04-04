@@ -14,7 +14,7 @@
     --yellow: #ffd166;
     --green: #06d6a0;
     --purple: #c77dff;
-    --bg: #fff5f8;
+    --bg: #f8f8fc;
     --card: #ffffff;
     --text: #2d2d2d;
     --text-soft: #8a8a9a;
@@ -33,7 +33,7 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-image: radial-gradient(circle at 20% 20%, #ffd6e7 0%, transparent 40%),
+    background-image: radial-gradient(circle at 20% 20%, #ede8f5 0%, transparent 40%),
                       radial-gradient(circle at 80% 80%, #ddf1ff 0%, transparent 40%);
   }
 
@@ -383,6 +383,7 @@
     <div class="guess-dots" id="guessDots">
       <div class="dot" id="dot1"></div>
       <div class="dot" id="dot2"></div>
+      <div class="dot" id="dot3"></div>
     </div>
 
     <div class="hint-box" id="hintBox"></div>
@@ -392,7 +393,7 @@
       <div class="dropdown" id="dropdown"></div>
     </div>
 
-    <button class="btn-guess" id="btnGuess" disabled>Guess! 🐾</button>
+    <button class="btn-guess" id="btnGuess" disabled>Guess!</button>
     <button class="btn-skip" id="btnSkip">I don't know 😅</button>
   </div>
 
@@ -406,7 +407,7 @@
     </div>
     <div class="jelly-name-reveal" id="resultName"></div>
     <div class="cute-line">Isn't it just so cute? Get it while you still can! 🛍️</div>
-    <a href="#" class="btn-amazon" id="btnAmazon" target="_blank" rel="noopener">Shop on Amazon 🛒</a>
+    <a href="#" class="btn-amazon" id="btnAmazon" target="_blank" rel="noopener">Get yours on Amazon →</a>
     <button class="btn-play-again" id="btnPlayAgain">Play Again 🎲</button>
   </div>
 </div>
@@ -458,6 +459,16 @@ const IN_GAME = [
   { name: "Amuseables Bagel", category: "Amuseables - Food", color: "images/38_Amuseables_Bagel_color.png", silhouette: "images/38_Amuseables_Bagel_silhouette.png", amazon: "https://amzn.to/4sRN2Wn" },
   { name: "Amuseables Burger", category: "Amuseables - Food", color: "images/39_Amuseables_Burger_color.png", silhouette: "images/39_Amuseables_Burger_silhouette.png", amazon: "https://amzn.to/4sT5z4I" },
   { name: "Amuseables Brie", category: "Amuseables - Food", color: "images/40_Amuseables_Brie_color.png", silhouette: "images/40_Amuseables_Brie_silhouette.png", amazon: "https://amzn.to/3POptPC" },
+  { name: "Amuseables Sweetcorn", category: "Amuseables - Food", color: "images/41_Amuseables_Sweetcorn_color.png", silhouette: "images/41_Amuseables_Sweetcorn_silhouette.png", amazon: "https://amzn.to/4sj9YNh" },
+  { name: "Amuseables Broccoli", category: "Amuseables - Food", color: "images/42_Amuseables_Broccoli_color.png", silhouette: "images/42_Amuseables_Broccoli_silhouette.png", amazon: "https://amzn.to/4clXMq5" },
+  { name: "Amuseables Cheese Fondue", category: "Amuseables - Food", color: "images/43_Amuseables_Cheese_Fondue_color.png", silhouette: "images/43_Amuseables_Cheese_Fondue_silhouette.png", amazon: "https://amzn.to/3NVkg85" },
+  { name: "Amuseables Ginger", category: "Amuseables - Food", color: "images/44_Amuseables_Ginger_color.png", silhouette: "images/44_Amuseables_Ginger_silhouette.png", amazon: "https://amzn.to/4sUcDhq" },
+  { name: "Amuseables Tree Cookie", category: "Amuseables - Food", color: "images/45_Amuseables_Tree_Cookie_color.png", silhouette: "images/45_Amuseables_Tree_Cookie_silhouette.png", amazon: "https://amzn.to/4skeyL9" },
+  { name: "Amuseables Ravioli", category: "Amuseables - Food", color: "images/46_Amuseables_Ravioli_color.png", silhouette: "images/46_Amuseables_Ravioli_silhouette.png", amazon: "https://amzn.to/4v8jYLK" },
+  { name: "Amuseables Aubergine", category: "Amuseables - Food", color: "images/47_Amuseables_Aubergine_color.png", silhouette: "images/47_Amuseables_Aubergine_silhouette.png", amazon: "https://amzn.to/41L3ATV" },
+  { name: "Ramone Bull", category: "Animals - Woodland", color: "images/48_Ramone_Bull_color.png", silhouette: "images/48_Ramone_Bull_silhouette.png", amazon: "https://amzn.to/4duMrFm" },
+  { name: "Brooke Otter", category: "Animals - Ocean Life", color: "images/49_Brooke_Otter_color.png", silhouette: "images/49_Brooke_Otter_silhouette.png", amazon: "https://amzn.to/4c4Qupf" },
+  { name: "Albee Bee", category: "Animals - Bugs & Insects", color: "images/50_Albee_Bee_color.png", silhouette: "images/50_Albee_Bee_silhouette.png", amazon: "https://amzn.to/4e35G94" },
 ];
 
 // 60 additional names (not yet in game)
@@ -509,6 +520,7 @@ const btnSkip = document.getElementById('btnSkip');
 const hintBox = document.getElementById('hintBox');
 const dot1 = document.getElementById('dot1');
 const dot2 = document.getElementById('dot2');
+const dot3 = document.getElementById('dot3');
 const confettiContainer = document.getElementById('confettiContainer');
 
 // =============================================
@@ -535,6 +547,7 @@ function startGame() {
   dropdown.classList.remove('open');
   dot1.className = 'dot';
   dot2.className = 'dot';
+  dot3.className = 'dot';
   searchInput.disabled = false;
   btnGuess.disabled = true;
   btnSkip.style.display = '';
@@ -591,7 +604,8 @@ function makeGuess() {
 
   if (correct) {
     if (guessCount === 0) dot1.className = 'dot used';
-    else dot2.className = 'dot used';
+    else if (guessCount === 1) dot2.className = 'dot used';
+    else dot3.className = 'dot used';
     setTimeout(() => revealResult(true), 300);
     return;
   }
@@ -607,8 +621,16 @@ function makeGuess() {
     btnGuess.disabled = true;
     searchInput.classList.add('shake');
     setTimeout(() => searchInput.classList.remove('shake'), 400);
-  } else {
+  } else if (guessCount === 1) {
     dot2.className = 'dot wrong';
+    guessCount = 2;
+    searchInput.value = '';
+    selectedName = '';
+    btnGuess.disabled = true;
+    searchInput.classList.add('shake');
+    setTimeout(() => searchInput.classList.remove('shake'), 400);
+  } else {
+    dot3.className = 'dot wrong';
     searchInput.disabled = true;
     btnGuess.disabled = true;
     btnSkip.style.display = 'none';
@@ -634,7 +656,6 @@ function renderDropdown(query) {
   dropdown.innerHTML = filtered.slice(0, 30).map((item, i) =>
     `<div class="dropdown-item" data-name="${item.name}" data-index="${i}">
       ${item.name}
-      ${item.inGame ? '<span class="tag in-game">in game</span>' : ''}
     </div>`
   ).join('');
 
@@ -698,14 +719,28 @@ btnSkip.addEventListener('click', () => {
     searchInput.value = '';
     selectedName = '';
     btnGuess.disabled = true;
-  } else {
+  } else if (guessCount === 1) {
     dot2.className = 'dot wrong';
+    guessCount = 2;
+    searchInput.value = '';
+    selectedName = '';
+    btnGuess.disabled = true;
+  } else {
+    dot3.className = 'dot wrong';
     btnSkip.style.display = 'none';
     setTimeout(() => revealResult(false), 300);
   }
 });
 
 document.getElementById('btnPlayAgain').addEventListener('click', startGame);
+
+// Spacebar starts new game when result is showing
+document.addEventListener('keydown', e => {
+  if (e.code === 'Space' && resultSection.classList.contains('visible') && document.activeElement.tagName !== 'INPUT') {
+    e.preventDefault();
+    startGame();
+  }
+});
 
 // =============================================
 // CONFETTI
