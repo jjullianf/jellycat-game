@@ -725,6 +725,10 @@ function pickNextJelly() {
   return IN_GAME[idx];
 }
 
+function trackEvent(name, params = {}) {
+  if (typeof gtag !== 'undefined') gtag('event', name, params);
+}
+
 function startRound() {
   guessCount = 0;
   selectedName = '';
@@ -753,6 +757,7 @@ function startGame() {
   usedIndices = [];
   playedThisRun = [];
   updateStreakBar();
+  trackEvent('game_start');
   startRound();
 }
 
@@ -760,6 +765,7 @@ function showCorrect() {
   streak++;
   updateStreakBar();
   launchConfetti();
+  trackEvent('correct_guess', { jellycat_name: currentJelly.name, streak: streak, guesses_used: guessCount + 1 });
 
   document.getElementById('flashName').textContent = currentJelly.name;
   document.getElementById('flashImg').src = currentJelly.color;
@@ -773,6 +779,7 @@ function showGameOver() {
   const finalStreak = streak;
   streak = 0;
   updateStreakBar();
+  trackEvent('game_over', { final_streak: finalStreak, jellycat_name: currentJelly.name });
 
   document.getElementById('gameoverScore').textContent =
     finalStreak === 0 ? 'You scored 0 this time!' : `You scored ${finalStreak} in a row! 🔥`;
@@ -820,6 +827,7 @@ function makeGuess() {
     searchInput.value = '';
     selectedName = '';
     btnGuess.disabled = true;
+    trackEvent('wrong_guess', { jellycat_name: currentJelly.name, guess_number: 1 });
     searchInput.classList.add('shake');
     setTimeout(() => searchInput.classList.remove('shake'), 400);
   } else if (guessCount === 1) {
@@ -828,12 +836,14 @@ function makeGuess() {
     searchInput.value = '';
     selectedName = '';
     btnGuess.disabled = true;
+    trackEvent('wrong_guess', { jellycat_name: currentJelly.name, guess_number: 2 });
     searchInput.classList.add('shake');
     setTimeout(() => searchInput.classList.remove('shake'), 400);
   } else {
     dot3.className = 'dot wrong';
     searchInput.disabled = true;
     btnGuess.disabled = true;
+    trackEvent('wrong_guess', { jellycat_name: currentJelly.name, guess_number: 3 });
     setTimeout(showGameOver, 400);
   }
 }
@@ -897,6 +907,7 @@ btnGuess.addEventListener('click', makeGuess);
 
 // Give up = instant game over
 btnSkip.addEventListener('click', () => {
+  trackEvent('give_up', { jellycat_name: currentJelly.name, streak_at_give_up: streak });
   setTimeout(showGameOver, 100);
 });
 
