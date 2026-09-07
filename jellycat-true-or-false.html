@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jellycat True or False — Is It a Real Jellycat? Free Quiz Game</title>
+<meta name="description" content="Is it a real Jellycat or a fake? Play the free Jellycat True or False quiz game. Test your knowledge and see how many real Jellycats you can spot!">
+<meta name="keywords" content="jellycat true or false, jellycat quiz, jellycat game, jellycat games, is it a jellycat, jellycat trivia, jellycat guessing game, free jellycat game">
+<link rel="canonical" href="https://guessthatjelly.com/jellycat-true-or-false">
+<meta property="og:title" content="Jellycat True or False — Is It a Real Jellycat?">
+<meta property="og:description" content="Real Jellycat or fake? Play the free True or False quiz and test your Jellycat knowledge!">
+<meta property="og:url" content="https://guessthatjelly.com/jellycat-true-or-false">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QVVXDPJE8H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QVVXDPJE8H');
+</script>
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap');
+  :root {
+    --pink: #ff6b9d; --pink-light: #ffd6e7; --pink-pale: #fff5f8;
+    --green: #06d6a0; --yellow: #ffd166; --text: #2d2d2d; --soft: #8a8a9a;
+    --radius: 20px; --shadow: 0 8px 32px rgba(255,107,157,0.13);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Nunito', sans-serif; background: #f8f8fc; color: var(--text); min-height: 100vh;
+    background-image: radial-gradient(circle at 20% 20%, #ede8f5 0%, transparent 40%),
+                      radial-gradient(circle at 80% 80%, #ddf1ff 0%, transparent 40%); }
+  .site-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+    gap: 12px; padding: 16px 24px; background: white; box-shadow: 0 2px 12px rgba(255,107,157,0.1);
+    position: sticky; top: 0; z-index: 50; }
+  .nav-logo { font-family: 'Fredoka One', cursive; color: var(--pink); text-decoration: none; font-size: 1.2rem; }
+  .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+  .nav-links a { color: var(--soft); font-weight: 700; text-decoration: none; font-size: 0.9rem;
+    transition: color 0.2s; }
+  .nav-links a:hover { color: var(--pink); }
+  .page-wrap { max-width: 580px; margin: 0 auto; padding: 32px 20px; }
+  h1 { font-family: 'Fredoka One', cursive; color: var(--pink); font-size: clamp(1.8rem,5vw,2.8rem);
+    margin-bottom: 8px; text-align: center; }
+  .subtitle { color: var(--soft); font-weight: 600; text-align: center; margin-bottom: 24px; font-size: 0.95rem; }
+  .btn { display: inline-block; padding: 13px 28px; border-radius: 50px; font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem; cursor: pointer; border: none; transition: transform 0.15s, box-shadow 0.15s;
+    text-decoration: none; text-align: center; }
+  .btn-pink { background: linear-gradient(135deg,var(--pink),#ff8fb3); color: white;
+    box-shadow: 0 4px 16px rgba(255,107,157,0.35); }
+  .btn-pink:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,107,157,0.4); }
+  .btn-green { background: linear-gradient(135deg,var(--green),#04c98e); color: white;
+    box-shadow: 0 4px 16px rgba(6,214,160,0.35); }
+  .btn-green:hover { transform: translateY(-2px); }
+  .btn-outline { background: white; color: var(--pink); border: 2.5px solid var(--pink); }
+  .btn-outline:hover { background: var(--pink); color: white; }
+  .btn-yellow { background: linear-gradient(135deg,var(--yellow),#ffb347); color: #5a3800;
+    box-shadow: 0 4px 16px rgba(255,209,102,0.4); }
+  .btn-yellow:hover { transform: translateY(-2px); }
+  .card { background: white; border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; }
+  .footer-links { text-align: center; margin-top: 24px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .footer-links a { color: var(--pink); font-weight: 700; text-decoration: none; font-size: 0.85rem; }
+  .disclaimer { text-align: center; margin-top: 16px; font-size: 0.72rem; color: #c0c0d0; line-height: 1.5; }
+  .bmc-btn { position: fixed; bottom: 24px; right: 20px; background: #c77dff; color: white;
+    border-radius: 50px; padding: 10px 18px; font-family: 'Fredoka One', cursive; font-size: 1rem;
+    text-decoration: none; display: flex; align-items: center; gap: 8px;
+    box-shadow: 0 4px 16px rgba(199,125,255,0.4); z-index: 998; transition: transform 0.15s; }
+  .bmc-btn:hover { transform: translateY(-2px); }
+
+  .progress-bar { height: 8px; background: var(--pink-light); border-radius: 10px; margin-bottom: 24px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--pink), #ff8fb3); border-radius: 10px; transition: width 0.4s ease; }
+  .question-card { background: white; border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 28px; text-align: center; margin-bottom: 20px; }
+  .round-label { font-size: 0.8rem; font-weight: 800; color: var(--soft); text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 16px; }
+  .jelly-name { font-family: 'Fredoka One', cursive; font-size: clamp(1.3rem, 4vw, 1.9rem);
+    color: var(--text); margin-bottom: 8px; line-height: 1.2; }
+  .jelly-sub { font-size: 0.85rem; color: var(--soft); font-weight: 600; margin-bottom: 20px; }
+  .answer-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .answer-btn { flex: 1; min-width: 120px; max-width: 180px; padding: 14px 10px;
+    border-radius: 50px; font-family: 'Fredoka One', cursive; font-size: 1.1rem;
+    cursor: pointer; border: none; transition: transform 0.15s, box-shadow 0.15s; }
+  .btn-true { background: linear-gradient(135deg,var(--green),#04c98e); color: white;
+    box-shadow: 0 4px 14px rgba(6,214,160,0.35); }
+  .btn-false { background: linear-gradient(135deg,#ff6b6b,#ff8f8f); color: white;
+    box-shadow: 0 4px 14px rgba(255,107,107,0.35); }
+  .answer-btn:hover { transform: translateY(-2px); }
+  .answer-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+  .feedback { margin-top: 16px; border-radius: 14px; padding: 14px 16px;
+    font-weight: 700; font-size: 0.95rem; display: none; animation: fadeIn 0.3s ease; }
+  .feedback.correct { background: #e8faf5; color: #048a65; border: 1.5px solid #c8f0e0; }
+  .feedback.wrong { background: #fff0f0; color: #c0392b; border: 1.5px solid #ffd0d0; }
+  .feedback.visible { display: block; }
+  .reveal-img { width: 120px; height: 120px; object-fit: contain; background: var(--pink-light);
+    border-radius: 14px; padding: 8px; margin: 10px auto 0; display: block; }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(-4px)} to{opacity:1;transform:none} }
+  .score-display { display: flex; gap: 12px; justify-content: center; margin-bottom: 20px; }
+  .score-box { background: white; border-radius: 14px; padding: 10px 20px; text-align: center;
+    box-shadow: var(--shadow); border: 1.5px solid var(--pink-light); }
+  .score-val { font-family: 'Fredoka One', cursive; font-size: 1.6rem; color: var(--pink); }
+  .score-lbl { font-size: 0.72rem; font-weight: 700; color: var(--soft); text-transform: uppercase; }
+  .end-screen { display: none; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+  .end-screen.visible { display: flex; animation: popIn 0.4s cubic-bezier(0.34,1.56,0.64,1); }
+  @keyframes popIn { from{opacity:0;transform:scale(0.85)} to{opacity:1;transform:scale(1)} }
+  .end-emoji { font-size: 3.5rem; }
+  .end-title { font-family: 'Fredoka One', cursive; font-size: 2rem; color: var(--pink); }
+  .end-score { font-family: 'Fredoka One', cursive; font-size: 1.1rem; color: var(--soft); }
+  .reward-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px,1fr)); gap: 10px; width: 100%; }
+  .reward-card { background: var(--pink-pale); border: 1.5px solid var(--pink-light); border-radius: 14px;
+    padding: 10px 8px; text-align: center; text-decoration: none; transition: transform 0.15s; }
+  .reward-card:hover { transform: translateY(-2px); }
+  .reward-card img { width: 70px; height: 70px; object-fit: contain; background: var(--pink-light);
+    border-radius: 10px; padding: 4px; display: block; margin: 0 auto 5px; }
+  .reward-name { font-size: 0.7rem; font-weight: 700; color: var(--text); line-height: 1.3; margin-bottom: 5px; }
+  .reward-btn { display: block; background: linear-gradient(135deg,var(--yellow),#ffb347); color: #5a3800;
+    border-radius: 20px; padding: 4px 10px; font-size: 0.7rem; font-weight: 800; }
+  .confetti-container { position: fixed; top:0;left:0;right:0;bottom:0; pointer-events:none; z-index:999; overflow:hidden; }
+  .confetti-piece { position: absolute; width: 10px; height: 10px; top: -20px; animation: confettiFall linear forwards; }
+  @keyframes confettiFall { 0%{transform:translateY(0) rotate(0deg);opacity:1} 100%{transform:translateY(110vh) rotate(720deg);opacity:0} }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="/" class="nav-logo">🐰 Guess That Jelly</a>
+  <div class="nav-links">
+    <a href="/">Silhouette Game</a>
+    <a href="/jellycat-memory">Memory Game</a>
+    <a href="/jellycat-true-or-false">True or False</a>
+    <a href="/all-jellycats">All Jellycats</a>
+  </div>
+</nav>
+<div class="page-wrap">
+  <h1>✅ True or False</h1>
+  <p class="subtitle">Is it a real Jellycat — or did we make it up?</p>
+
+  <div id="gameArea">
+    <div class="score-display">
+      <div class="score-box"><div class="score-val" id="scoreVal">0</div><div class="score-lbl">Score</div></div>
+      <div class="score-box"><div class="score-val" id="questionVal">1/15</div><div class="score-lbl">Question</div></div>
+      <div class="score-box"><div class="score-val" id="streakVal">0</div><div class="score-lbl">Streak 🔥</div></div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+
+    <div class="question-card">
+      <div class="round-label" id="roundLabel">Question 1 of 15</div>
+      <div class="jelly-name" id="jellyName">Loading...</div>
+      <div class="jelly-sub" id="jellySub">Is this a real Jellycat?</div>
+      <div class="answer-btns">
+        <button class="answer-btn btn-true" id="btnTrue" onclick="answer(true)">✅ True</button>
+        <button class="answer-btn btn-false" id="btnFalse" onclick="answer(false)">❌ False</button>
+      </div>
+      <div class="feedback" id="feedback"></div>
+    </div>
+
+    <div style="text-align:center;">
+      <button class="btn btn-outline" onclick="startGame()">Restart 🔄</button>
+    </div>
+  </div>
+
+  <div class="card end-screen" id="endScreen">
+    <div class="end-emoji" id="endEmoji">🎉</div>
+    <div class="end-title" id="endTitle"></div>
+    <div class="end-score" id="endScore"></div>
+    <p style="color:var(--soft);font-weight:600;font-size:0.9rem;">Real Jellycats from this round — grab yours!</p>
+    <div class="reward-grid" id="rewardGrid"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px;">
+      <button class="btn btn-pink" onclick="startGame()">Play Again 🎲</button>
+      <a href="/" class="btn btn-outline">Silhouette Game 🐰</a>
+    </div>
+    
+  <div class="footer-links">
+    <a href="/">🎮 Silhouette Game</a>
+    <a href="/jellycat-memory">🃏 Memory Game</a>
+    <a href="/jellycat-true-or-false">✅ True or False</a>
+    <a href="/all-jellycats">📋 All Jellycats</a>
+  </div>
+  <p class="disclaimer">This is an independent fan game and is not affiliated with, endorsed by, or associated with Jellycat Ltd in any way. Jellycat is a registered trademark of Jellycat Ltd.</p>
+  
+  <a href="https://buymeacoffee.com/juulian" target="_blank" rel="noopener" class="bmc-btn">☕ Buy me a coffee</a>
+
+  </div>
+</div>
+<div class="confetti-container" id="confettiContainer"></div>
+
+<script>
+const JELLYCATS = [
+  { name: "Timmy Turtle", category: "Animals - Amphibians & Reptiles", color: "images/01_Timmy_Turtle_color.png", amazon: "https://amzn.to/3Oh3YGG" },
+  { name: "Ricky Rain Frog", category: "Animals - Amphibians & Reptiles", color: "images/02_Ricky_Rain_Frog_color.png", amazon: "https://amzn.to/4va9xY9" },
+  { name: "Stevie Snake", category: "Animals - Amphibians & Reptiles", color: "images/03_Stevie_Snake_color.png", amazon: "https://amzn.to/47DgjeT" },
+  { name: "Bartholomew Bear with Bathrobe", category: "Animals - Bears", color: "images/04_Bartholomew_Bear_with_Bathrobe_color.png", amazon: "https://amzn.to/4vbMlZA" },
+  { name: "Bartholomew Bear", category: "Animals - Bears", color: "images/05_Bartholomew_Bear_color.png", amazon: "https://amzn.to/4dZyb7x" },
+  { name: "Bashful Duckling", category: "Animals - Birds", color: "images/06_Bashful_Duckling_color.png", amazon: "https://amzn.to/4tn0Ho1" },
+  { name: "Beatrice Butterfly", category: "Animals - Bugs & Insects", color: "images/07_Beatrice_Butterfly_color.png", amazon: "https://amzn.to/4bS8tAG" },
+  { name: "Munro Scottie Dog", category: "Animals - Dogs & Puppies", color: "images/08_Munro_Scottie_Dog_color.png", amazon: "https://amzn.to/4dpj2ME" },
+  { name: "Otto Sausage Dog", category: "Animals - Dogs & Puppies", color: "images/09_Otto_Sausage_Dog_color.png", amazon: "https://amzn.to/4s7Ejhr" },
+  { name: "Bashful Fudge Puppy", category: "Animals - Dogs & Puppies", color: "images/10_Bashful_Fudge_Puppy_color.png", amazon: "https://amzn.to/3QjSuTj" },
+  { name: "Bashful Black and Cream Puppy", category: "Animals - Dogs & Puppies", color: "images/11_Bashful_Black_and_Cream_Puppy_color.png", amazon: "https://amzn.to/4c1QLt5" },
+  { name: "Fuddlewuddle Dragon", category: "Animals - Dragons & Dinosaurs", color: "images/12_Fuddlewuddle_Dragon_color.png", amazon: "https://amzn.to/3PLiK9b" },
+  { name: "Dexter Dragon", category: "Animals - Dragons & Dinosaurs", color: "images/13_Dexter_Dragon_color.png", amazon: "https://amzn.to/4v6KOEd" },
+  { name: "Clyde Capybara", category: "Animals - Jungle & Safari", color: "images/14_Clyde_Capybara_color.png", amazon: "https://amzn.to/4sRMzU7" },
+  { name: "Bashful Tiger", category: "Animals - Jungle & Safari", color: "images/15_Bashful_Tiger_color.png", amazon: "https://amzn.to/3NKD0qV" },
+  { name: "Bashful Lion", category: "Animals - Jungle & Safari", color: "images/16_Bashful_Lion_color.png", amazon: "https://amzn.to/4dudocc" },
+  { name: "Bashful Giraffe", category: "Animals - Jungle & Safari", color: "images/17_Bashful_Giraffe_color.png", amazon: "https://amzn.to/4c7akQK" },
+  { name: "Fuddlewuddle Lion", category: "Animals - Jungle & Safari", color: "images/18_Fuddlewuddle_Lion_color.png", amazon: "https://amzn.to/4vccqYg" },
+  { name: "Sheldon Shrimp", category: "Animals - Ocean Life", color: "images/19_Sheldon_Shrimp_color.png", amazon: "https://amzn.to/419vYyZ" },
+  { name: "Odell Octopus", category: "Animals - Ocean Life", color: "images/20_Odell_Octopus_color.png", amazon: "https://amzn.to/4mbfv6P" },
+  { name: "Bashful Beige Bunny", category: "Animals - Bunny", color: "images/21_Bashful_Bunny_color.png", amazon: "https://amzn.to/3QkWwe8" },
+  { name: "Bashful Fox Cub", category: "Animals - Woodland", color: "images/22_Bashful_Fox_Cub_color.png", amazon: "https://amzn.to/4tn14yV" },
+  { name: "Amuseables Peanut", category: "Amuseables - Food", color: "images/23_Amuseables_Peanut_color.png", amazon: "https://amzn.to/4bQeVrP" },
+  { name: "Amuseables Pickle", category: "Amuseables - Food", color: "images/24_Amuseables_Pickle_color.png", amazon: "https://amzn.to/3PLj1cd" },
+  { name: "Amuseables Croissant", category: "Amuseables - Food", color: "images/25_Amuseables_Croissant_color.png", amazon: "https://amzn.to/3QiEclU" },
+  { name: "Amuseables Tennis Ball", category: "Amuseables - Sports", color: "images/26_Amuseables_Tennis_Ball_color.png", amazon: "https://amzn.to/4vbegss" },
+  { name: "Amuseables Cinnamon Bun", category: "Amuseables - Food", color: "images/27_Amuseables_Cinnamon_Bun_color.png", amazon: "https://amzn.to/4m5ZIpS" },
+  { name: "Amuseables Cherries", category: "Amuseables - Food", color: "images/28_Amuseables_Cherries_color.png", amazon: "https://amzn.to/47L5U0O" },
+  { name: "Amuseables Hot Dog", category: "Amuseables - Food", color: "images/29_Amuseables_Hot_Dog_color.png", amazon: "https://amzn.to/41ShDqJ" },
+  { name: "Amuseables Peach", category: "Amuseables - Food", color: "images/30_Amuseables_Peach_color.png", amazon: "https://amzn.to/4bSbXTN" },
+  { name: "Amuseables Siofra Shamrock", category: "Amuseables - Exclusive", color: "images/31_Amuseables_Siofra_Shamrock_color.png", amazon: "https://amzn.to/48fiQfr" },
+  { name: "Amuseables Pretzel", category: "Amuseables - Food", color: "images/32_Amuseables_Pretzel_color.png", amazon: "https://amzn.to/419wrkJ" },
+  { name: "Amuseables Boiled Egg Graduate", category: "Amuseables - Food", color: "images/33_Amuseables_Boiled_Egg_Graduate_color.png", amazon: "https://amzn.to/41aCBRF" },
+  { name: "Amuseables Waffle", category: "Amuseables - Food", color: "images/34_Amuseables_Waffle_color.png", amazon: "https://amzn.to/4vbNal8" },
+  { name: "Amuseables Baguette", category: "Amuseables - Food", color: "images/35_Amuseables_Baguette_color.png", amazon: "https://amzn.to/4bR0OT9" },
+  { name: "Amuseables Sardine Tin", category: "Amuseables - Food", color: "images/36_Amuseables_Sardine_Tin_color.png", amazon: "https://amzn.to/4sRNaFl" },
+  { name: "Amuseables Apple", category: "Amuseables - Food", color: "images/37_Amuseables_Apple_color.png", amazon: "https://amzn.to/3PRBNyv" },
+  { name: "Amuseables Bagel", category: "Amuseables - Food", color: "images/38_Amuseables_Bagel_color.png", amazon: "https://amzn.to/4sRN2Wn" },
+  { name: "Amuseables Burger", category: "Amuseables - Food", color: "images/39_Amuseables_Burger_color.png", amazon: "https://amzn.to/4sT5z4I" },
+  { name: "Amuseables Brie", category: "Amuseables - Food", color: "images/40_Amuseables_Brie_color.png", amazon: "https://amzn.to/3POptPC" },
+  { name: "Amuseables Sweetcorn", category: "Amuseables - Food", color: "images/41_Amuseables_Sweetcorn_color.png", amazon: "https://amzn.to/4sj9YNh" },
+  { name: "Amuseables Broccoli", category: "Amuseables - Food", color: "images/42_Amuseables_Broccoli_color.png", amazon: "https://amzn.to/4clXMq5" },
+  { name: "Amuseables Cheese Fondue", category: "Amuseables - Food", color: "images/43_Amuseables_Cheese_Fondue_color.png", amazon: "https://amzn.to/3NVkg85" },
+  { name: "Amuseables Ginger", category: "Amuseables - Food", color: "images/44_Amuseables_Ginger_color.png", amazon: "https://amzn.to/4sUcDhq" },
+  { name: "Amuseables Tree Cookie", category: "Amuseables - Food", color: "images/45_Amuseables_Tree_Cookie_color.png", amazon: "https://amzn.to/4skeyL9" },
+  { name: "Amuseables Ravioli", category: "Amuseables - Food", color: "images/46_Amuseables_Ravioli_color.png", amazon: "https://amzn.to/4v8jYLK" },
+  { name: "Amuseables Aubergine", category: "Amuseables - Food", color: "images/47_Amuseables_Aubergine_color.png", amazon: "https://amzn.to/41L3ATV" },
+  { name: "Ramone Bull", category: "Animals - Woodland", color: "images/48_Ramone_Bull_color.png", amazon: "https://amzn.to/4duMrFm" },
+  { name: "Brooke Otter", category: "Animals - Ocean Life", color: "images/49_Brooke_Otter_color.png", amazon: "https://amzn.to/4c4Qupf" },
+  { name: "Albee Bee", category: "Animals - Bugs & Insects", color: "images/50_Albee_Bee_color.png", amazon: "https://amzn.to/4e35G94" },
+  { name: "Amuseables Badminton", category: "Amuseables - Sports", color: "images/51_Badminton_color.png", amazon: "https://amzn.to/47NGaAW" },
+  { name: "Amuseables Basketball", category: "Amuseables - Sports", color: "images/52_Basketball_color.png", amazon: "https://amzn.to/4mfAIN6" },
+  { name: "Amuseables Baseball", category: "Amuseables - Sports", color: "images/53_Baseball_color.png", amazon: "https://amzn.to/4e34Qcm" },
+  { name: "Amuseables Storm Cloud", category: "Amuseables - Weather", color: "images/54_Storm_Cloud_color.png", amazon: "https://amzn.to/4sle2w9" },
+  { name: "Amuseables Moon", category: "Amuseables - Space", color: "images/55_Moon_color.png", amazon: "https://amzn.to/4t1cl8C" },
+  { name: "Amuseables Diamond Ring", category: "Amuseables - Objects", color: "images/56_Diamond_Ring_color.png", amazon: "https://amzn.to/3NLwRe3" },
+  { name: "Amuseables Boiled Egg Bride", category: "Amuseables - Food", color: "images/57_Boiled_Egg_Bride_color.png", amazon: "https://amzn.to/3PMlHq2" },
+  { name: "Amuseables Coffee Cup", category: "Amuseables - Food", color: "images/58_Amuseables_Coffee_Cup_color.png", amazon: "https://amzn.to/4mffkrp" },
+  { name: "Amuseables Pink and White Marshmallows", category: "Amuseables - Food", color: "images/59_Amuseables_Pink_and_White_Marshmallows_color.png", amazon: "https://amzn.to/4cspem2" },
+  { name: "Amuseables Slice of Pizza", category: "Amuseables - Food", color: "images/60_Amuseables_Slice_of_Pizza_color.png", amazon: "https://amzn.to/3OqMjwj" },
+  { name: "Amuseables Clementine", category: "Amuseables - Food", color: "images/61_Amuseables_Clementine_color.png", amazon: "https://amzn.to/4e5CzBY" },
+  { name: "Amuseables Boiled Egg Groom", category: "Amuseables - Food", color: "images/62_Amuseables_Boiled_Egg_Groom_color.png", amazon: "https://amzn.to/4spf1M7" },
+  { name: "Blossom Blush Bunny Cherry", category: "Animals - Bunny", color: "images/63_Blossom_Blush_Bunny_Cherry_color.png", amazon: "https://amzn.to/4siGhLY" },
+  { name: "Blossom Beige Bunny Petal", category: "Animals - Bunny", color: "images/64_Blossom_Beige_Bunny_Petal_color.png", amazon: "https://amzn.to/4tzyCdn" },
+  { name: "Blossom Silver Bunny Bloom", category: "Animals - Bunny", color: "images/65_Blossom_Silver_Bunny_Bloom_color.png", amazon: "https://amzn.to/4mbcUtC" },
+  { name: "Bashful Luxe Bunny Nimbus", category: "Animals - Bunny", color: "images/66_Bashful_Luxe_Bunny_Nimbus_color.png", amazon: "https://amzn.to/3PYCciI" },
+  { name: "Bashful Silver Bunny", category: "Animals - Bunny", color: "images/67_Bashful_Silver_Bunny_color.png", amazon: "https://amzn.to/41Q4QVR" },
+  { name: "Bashful Viola Bunny", category: "Animals - Bunny", color: "images/68_Bashful_Viola_Bunny_color.png", amazon: "https://amzn.to/4txs0vY" },
+  { name: "Smudge Rabbit", category: "Animals - Bunny", color: "images/69_Smudge_Rabbit_color.png", amazon: "https://amzn.to/3PWyNkv" },
+  { name: "Bashful Tulip Pink Bunny", category: "Animals - Bunny", color: "images/70_Bashful_Tulip_Pink_Bunny_color.png", amazon: "https://amzn.to/3PWT75d" },
+  { name: "Bashful Cream Bunny", category: "Animals - Bunny", color: "images/71_Bashful_Cream_Bunny_color.png", amazon: "https://amzn.to/4cuXbCr" },
+  { name: "Peanut Penguin", category: "Animals - Arctic", color: "images/72_Peanut_Penguin_color.png", amazon: "https://amzn.to/3OeB9um" },
+  { name: "Bashful Turtle", category: "Animals - Amphibians & Reptiles", color: "images/73_Bashful_Turtle_color.png", amazon: "https://amzn.to/4tBCwCH" },
+  { name: "Bumbly Bear", category: "Animals - Bears", color: "images/74_Bumbly_Bear_color.png", amazon: "https://amzn.to/48mMT4X" },
+  { name: "Dorit Duckling", category: "Animals - Birds", color: "images/75_Dorit_Duckling_color.png", amazon: "https://amzn.to/4vah1dz" },
+  { name: "Yummy Duckling", category: "Animals - Birds", color: "images/76_Yummy_Duckling_color.png", amazon: "https://amzn.to/4c9OADN" },
+  { name: "Bashful Calf", category: "Animals - Farmlife", color: "images/77_Bashful_Calf_color.png", amazon: "https://amzn.to/4duvmLC" },
+  { name: "Little Horse", category: "Animals - Farmlife", color: "images/78_Little_Horse_color.png", amazon: "https://amzn.to/4vf6gqr" },
+  { name: "Little Pig", category: "Animals - Farmlife", color: "images/79_Little_Pig_color.png", amazon: "https://amzn.to/4vhKq5H" },
+  { name: "Little Pup Dog", category: "Animals - Dogs & Puppies", color: "images/80_Little_Pup_Dog_color.png", amazon: "https://amzn.to/4cbZr0b" },
+  { name: "Little Monkey", category: "Animals - Jungle & Safari", color: "images/81_Little_Monkey_color.png", amazon: "https://amzn.to/4sZawJf" },
+];
+const FAKE_NAMES = ['Wobble Whale', 'Biscuit Bear', 'Pudding Penguin', 'Muffin Mouse', 'Toffee Toad', 'Crumpet Cat', 'Doodle Duck', 'Snuggle Snail', 'Bumble Badger', 'Treacle Tiger', 'Pickles Platypus', 'Custard Cow', 'Noodle Newt', 'Breezy Butterfly', 'Maple Moose', 'Cheddar Chick', 'Doughy Deer', 'Fizzy Fish', 'Ginger Gorilla', 'Huckleberry Hare', 'Jammy Jaguar', 'Ketchup Koala', 'Lemon Llama', 'Marmalade Mole', 'Nutmeg Narwhal', 'Oatie Otter', 'Parsnip Parrot', 'Quincy Quail', 'Rhubarb Rabbit', 'Saffron Seal', 'Truffle Turkey', 'Umber Unicorn', 'Vanilla Vole', 'Waffles Walrus', 'Yam Yak', 'Zesty Zebra', 'Cobbler Crocodile', 'Dumpling Dragon', 'Eclair Elephant', 'Fudge Ferret', 'Gravy Goose', 'Honeydew Hedgehog', 'Icing Iguana', 'Jolly Jellyfish', 'Kumquat Kangaroo'];
+
+const TOTAL_Q = 15;
+let questions = [], current = 0, score = 0, streak = 0, answered = false;
+let realInRound = [];
+
+function shuffle(a) { return a.sort(() => Math.random() - 0.5); }
+
+function buildQuestions() {
+  const reals = shuffle([...JELLYCATS]).slice(0, 9).map(j => ({ isReal: true, name: j.name, img: j.color, amazon: j.amazon }));
+  const fakes = shuffle([...FAKE_NAMES]).slice(0, 6).map(n => ({ isReal: false, name: n }));
+  return shuffle([...reals, ...fakes]);
+}
+
+function startGame() {
+  document.getElementById('endScreen').classList.remove('visible');
+  document.getElementById('gameArea').style.display = 'block';
+  questions = buildQuestions();
+  current = 0; score = 0; streak = 0;
+  realInRound = questions.filter(q => q.isReal);
+  nextQuestion();
+}
+
+function nextQuestion() {
+  answered = false;
+  const q = questions[current];
+  document.getElementById('roundLabel').textContent = `Question ${current+1} of ${TOTAL_Q}`;
+  document.getElementById('questionVal').textContent = `${current+1}/${TOTAL_Q}`;
+  document.getElementById('jellyName').textContent = q.name;
+  document.getElementById('jellySub').textContent = 'Is this a real Jellycat?';
+  document.getElementById('progressFill').style.width = (current / TOTAL_Q * 100) + '%';
+  const fb = document.getElementById('feedback');
+  fb.className = 'feedback';
+  fb.innerHTML = '';
+  document.getElementById('btnTrue').disabled = false;
+  document.getElementById('btnFalse').disabled = false;
+  updateScore();
+}
+
+function answer(userSaysTrue) {
+  if (answered) return;
+  answered = true;
+  document.getElementById('btnTrue').disabled = true;
+  document.getElementById('btnFalse').disabled = true;
+  const q = questions[current];
+  const correct = (userSaysTrue === q.isReal);
+  if (correct) { score++; streak++; } else { streak = 0; }
+  updateScore();
+
+  const fb = document.getElementById('feedback');
+  fb.className = 'feedback visible ' + (correct ? 'correct' : 'wrong');
+  if (correct) {
+    fb.innerHTML = q.isReal
+      ? `✅ Correct! <strong>${q.name}</strong> is a real Jellycat! 🐰`
+      : `✅ Correct! We made that one up 😄`;
+    if (q.isReal && q.img) {
+      fb.innerHTML += `<img src="${q.img}" alt="${q.name}" class="reveal-img">`;
+    }
+  } else {
+    fb.innerHTML = q.isReal
+      ? `❌ That was real! <strong>${q.name}</strong> is a genuine Jellycat 🐰<img src="${q.img}" alt="${q.name}" class="reveal-img">`
+      : `❌ We made that one up! "${q.name}" isn't a real Jellycat 😄`;
+  }
+
+  if (typeof gtag !== 'undefined') gtag('event', 'tof_answer', {correct, is_real: q.isReal});
+
+  setTimeout(() => {
+    current++;
+    if (current < TOTAL_Q) { nextQuestion(); }
+    else { showEnd(); }
+  }, correct ? 1400 : 1800);
+}
+
+function updateScore() {
+  document.getElementById('scoreVal').textContent = score;
+  document.getElementById('streakVal').textContent = streak;
+}
+
+function showEnd() {
+  document.getElementById('gameArea').style.display = 'none';
+  const es = document.getElementById('endScreen');
+  es.classList.add('visible');
+  const pct = Math.round(score / TOTAL_Q * 100);
+  const emoji = pct === 100 ? '🏆' : pct >= 80 ? '🌟' : pct >= 60 ? '🎉' : pct >= 40 ? '😊' : '🌸';
+  const msg = pct === 100 ? 'Perfect score!' : pct >= 80 ? 'Jellycat expert!' : pct >= 60 ? 'Pretty good!' : pct >= 40 ? 'Getting there!' : 'Better luck next time!';
+  document.getElementById('endEmoji').textContent = emoji;
+  document.getElementById('endTitle').textContent = msg;
+  document.getElementById('endScore').textContent = `${score} / ${TOTAL_Q} correct (${pct}%)`;
+
+  const grid = document.getElementById('rewardGrid');
+  grid.innerHTML = realInRound.map(j => `
+    <a href="${j.amazon}" target="_blank" rel="noopener" class="reward-card">
+      <img src="${j.img}" alt="${j.name}">
+      <div class="reward-name">${j.name}</div>
+      <span class="reward-btn">Get yours now!</span>
+    </a>`).join('');
+
+  if (pct >= 80) launchConfetti();
+  if (typeof gtag !== 'undefined') gtag('event', 'tof_complete', {score, pct});
+}
+
+function launchConfetti() {
+  const c = document.getElementById('confettiContainer');
+  c.innerHTML = '';
+  const colors = ['#ff6b9d','#ffd166','#06d6a0','#6bcbff','#c77dff'];
+  for (let i = 0; i < 100; i++) {
+    const p = document.createElement('div');
+    p.className = 'confetti-piece';
+    const size = Math.random() * 10 + 6;
+    p.style.cssText = `left:${Math.random()*100}%;width:${size}px;height:${size}px;background:${colors[Math.floor(Math.random()*colors.length)]};border-radius:${Math.random()>0.5?'50%':'0'};animation-duration:${Math.random()*2+2}s;animation-delay:${Math.random()*0.8}s;`;
+    c.appendChild(p);
+  }
+  setTimeout(() => c.innerHTML = '', 4000);
+}
+
+startGame();
+</script>
+</body>
+</html>
